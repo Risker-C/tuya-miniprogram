@@ -5,7 +5,7 @@ This project is developed using Tuya SDK, which enables you to quickly develop b
 #### 截图
 
 <p align="center">
-<img width=200 src="https://github.com/Risker-C/tuya-miniprogram/blob/master/screenshot.png" >
+<img width=400 src="https://github.com/Risker-C/tuya-miniprogram/blob/master/screenshot.png" >
 </p>
 
 ## Note: This repository is inherited from the old Tuya Github repository: xxxxxx, which will be deprecated soon. Please use this repository for Tuya SDK development instead. For changing the existing remote repository URL, please check this tutorial: https://github.com/TuyaInc/tuya-weapp-demo
