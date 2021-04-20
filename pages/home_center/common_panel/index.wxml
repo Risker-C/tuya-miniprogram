@@ -1,0 +1,62 @@
+<!-- miniprogram/pages/home_center/common_panel/index.js.wxml -->
+<wxs src="./index.wxs" module="utils" />
+<image class="common-panel-backgroud" src="{{forest}}" />
+<navbar device_name="智能开关" bind:jumpTodeviceEditPage="jumpTodeviceEditPage" />
+<!-- <view class="common-panel-header">
+  <view class="common-panel-header-block">
+    <view class="common-panel-header-dpName">{{titleItem.name}}</view>
+    <view class="common-panel-header-dpValue">{{titleItem.value}}</view>
+  </view>
+</view> -->
+<view class="container" hover-class="none" hover-stop-propagation="false">
+  <view class="container-button" data-value="{{!titleItem.value}}" data-code="{{rwDpList.switch_1.code}}" bind:tap="sendDp" hover-class="none" hover-stop-propagation="false">
+    <image hidden="{{!titleItem.value}}" class="container-button__icon" src="../../../image/btn-open2.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <image hidden="{{titleItem.value}}" class="container-button__icon" src="../../../image/btn-close2.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <text class="container-button__title">
+      {{titleItem.name}} [{{titleItem.value ? '已开启' : '未开启'}}]
+    </text>
+  </view>
+</view>
+<view class="footer" hover-class="none" hover-stop-propagation="false">
+  <view class="footer-item">
+    <image class="footer-item__icon" src="../../../image/time.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <text class="footer-item__title">倒计时</text>
+  </view>
+  <view class="footer-item">
+    <image class="footer-item__icon" src="../../../image/timing.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <text class="footer-item__title">预约时间</text>
+  </view>
+  <view class="footer-item">
+    <image class="footer-item__icon" src="../../../image/electricity.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <text class="footer-item__title">电量统计</text>
+  </view>
+  <view class="footer-item" bind:tap="jumpTodeviceEditPage">
+    <image class="footer-item__icon" src="../../../image/config.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <text class="footer-item__title">开关配置</text>
+  </view>
+</view>
+<!-- <block wx:if="{{isRoDpListShow}}">
+  <view class="statuslist">
+    <block wx:for="{{roDpList}}" wx:key="{{item.code}}" wx:for-item="item" wx:for-index='idx'>
+      <view class="{{utils.countDpItem(roDpListLength,idx)}}">
+        <view class="roDpItem-dpName">{{item.code}}</view>
+        <view class="roDpItem-status">{{item.value}}</view>
+      </view>
+    </block>
+  </view>
+</block> -->
+<!-- <view class="scroll-view">
+  <block wx:if="{{isRwDpListShow}}">
+    <block wx:for="{{rwDpList}}" wx:key="{{item.code}}" wx:for-item="item">
+      <block wx:if="{{item.type === 'Boolean'}}">
+        <Boolean model:isChecked="{{item.value}}" dpCode="{{item.code}}" dpName="{{item.name}}" bind:sendDp="sendDp" />
+      </block>
+      <block wx:if="{{item.type === 'Integer'}}">
+        <Integer model:value="{{item.value}}" values="{{item.values}}" dpCode="{{item.code}}" dpName="{{item.name}}" bind:sendDp="sendDp" />
+      </block>
+      <block wx:if="{{item.type === 'Enum'}}">
+        <Enum model:value="{{item.value}}" values="{{item.values}}" dpCode="{{item.code}}" dpName="{{item.name}}" bind:sendDp="sendDp" />
+      </block>
+    </block>
+  </block>
+</view> -->
